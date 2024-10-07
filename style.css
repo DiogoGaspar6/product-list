@@ -1,0 +1,146 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: hsl(20, 50%, 98%);
+}
+
+.highlight {
+  border: 1px solid hsl(14, 86%, 42%);
+}
+
+.title {
+  text-align: left;
+  padding-left: 2.1%;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-right: 400px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+.cart-info{
+  padding: 20px;
+  margin-top: 25px;
+  width: 800px;
+  background-color: white;
+}
+
+.cart-info h2{
+  color: hsl(14, 86%, 42%);
+}
+
+.cart-info div{
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.cart-info input {
+  text-align: center;
+  border: none;
+  color: white;
+  border-radius: 29px;
+  padding: 10px;
+  width: 100%;
+  background-color: hsl(14, 86%, 42%);
+  display: block; 
+  margin: 0 auto;
+}
+
+.dessert {
+  padding: 10px;
+  width: 300px;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative; 
+}
+
+.dessert button {
+  position: absolute; 
+  top: 61%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: white;
+  color: black;
+  border: 1px solid hsl(12, 20%, 44%);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; 
+}
+
+.dessert button svg {
+  margin-right: 5px;
+}
+
+.dessert img {
+  align-items: center;
+  width: 200px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+.dessert p{
+  text-align: left;
+  padding-left: 17%;
+  font-size: 0.9em;
+}
+
+.dessert h2{
+  text-align: left;
+  font-size: 1.1em;
+  padding-left: 17%;
+}
+
+.container .price {
+  color: hsl(14, 86%, 42%);
+}
+
+.products{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .dessert button {
+    top: 70%; /* Adjust position for smaller screens */
+    padding: 8px 12px; /* Adjust padding for smaller screens */
+  }
+
+  .dessert img {
+    width: 100%; /* Make image responsive */
+  }
+}
+
+@media (max-width: 480px) {
+  .dessert button {
+    top: 70%; /* Further adjust position for very small screens */
+    padding: 10px 15px; /* Further adjust padding for very small screens */
+    font-size: 14px; /* Adjust font size for very small screens */
+  }
+}
