@@ -1,34 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <script src="script.js" defer></script>
-  <title>Frontend Mentor | Product list with cart</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <div class="title">
-    <h1>Desserts</h1>
-  </div>
-  <div class="main-container">
-    <div class="container">
-    </div>
-    <div class="cart-info">
-      <h2>Your cart (7)</h2>
-      <div id="products">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Product list with cart</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="left-container">
+          <div class="title">
+            <h1>Desserts</h1>
+          </div>
+          <div class="products"></div>
+        </div>
+        <div class="right-container">
+          <div class="cart">
+            <div class="title-cart">
+              <h2></h2>
+            </div>
+            <div class="img-empty-cart">
+              <!-- image for empty chart -->
+            </div>
+            <div class="order-total">
+              <span class="order-total-text"></span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div><input type="button" value="Confirm Order" onclick="confirm()"></div>
+      <div class="overlay" onclick="closePopup()"></div>
+      <div class="pop-up">
+        <div class="pop-up-container">
+          <div class="icon-confirmation">
+            <!-- icon goes here -->
+          </div>
+          <div class="header-confirmation">
+            <div class="title-confirmation">
+              <h1>Order Confirmed</h1>
+            </div>
+            <div class="text-confirmation">
+              <p>We hope you enjoy your food!</p>
+            </div>
+          </div>
+
+          <div class="products-confirmation">
+            <div class="products-confirmation-details">
+              <!-- products info goes here -->
+            </div>
+            <div class="order-total-confirmation">
+              <!-- order total goes here -->
+            </div>
+          </div>
+
+          <div class="btn-confirmation">
+            <button onclick="hidePopup()">Start New Order</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="https://instagram.com/diogoogaspar" target="_blank">Diogo Gaspar</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by
+      <a href="https://instagram.com/diogoogaspar" target="_blank"
+        >Diogo Gaspar</a
+      >.
+    </div>
+  </body>
 </html>
