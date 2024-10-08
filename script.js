@@ -249,32 +249,47 @@ function showPopup() {
 
   // Show the popup
   popup.style.visibility = 'visible';
+  popup.style.opacity = '1';
 
-  document.querySelector('.overlay').style.visibility = 'visible'
+  const overlay = document.querySelector('.overlay');
+  overlay.style.visibility = 'visible';
+  overlay.style.opacity = '1';
 }
 
-
 function hidePopup() {
-
-  if(confirm('Are you sure you want to confirm the order?')){
+  if (confirm('Are you sure you want to confirm the order?')) {
     const popup = document.querySelector('.pop-up');
-  popup.style.visibility = 'hidden';
-  
-  document.querySelector('.overlay').style.visibility = 'hidden'
+    popup.style.opacity = '0';
+    popup.addEventListener('transitionend', () => {
+      popup.style.visibility = 'hidden';
+    }, { once: true });
 
-  cart = [];
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCartUI();
-  resetProductButtons()
+    const overlay = document.querySelector('.overlay');
+    overlay.style.opacity = '0';
+    overlay.addEventListener('transitionend', () => {
+      overlay.style.visibility = 'hidden';
+    }, { once: true });
+
+    cart = [];
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartUI();
+    resetProductButtons();
   }
 }
 
-function closePopup(){
+function closePopup() {
   const popup = document.querySelector('.pop-up');
-  popup.style.visibility = 'hidden';
-  document.querySelector('.overlay').style.visibility = 'hidden'
-}
+  popup.style.opacity = '0';
+  popup.addEventListener('transitionend', () => {
+    popup.style.visibility = 'hidden';
+  }, { once: true });
 
+  const overlay = document.querySelector('.overlay');
+  overlay.style.opacity = '0';
+  overlay.addEventListener('transitionend', () => {
+    overlay.style.visibility = 'hidden';
+  }, { once: true });
+}
 // load json data
 document.addEventListener('DOMContentLoaded', () => {
   fetch('./data.json')
@@ -347,5 +362,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // load img empty cart
 window.addEventListener('DOMContentLoaded', () => {
+  
   updateCartUI()
 })
