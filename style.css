@@ -432,6 +432,12 @@ body{
   }
 }
 
+@media screen and (max-width: 800px) {
+  .add-to-cart{
+    top: 74%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .products {
     grid-template-columns: 1fr;
@@ -475,7 +481,7 @@ body{
   }
 
   .pop-up {
-    top: 79%;
+    top: 54%;
     left: 50%;
     width: 95%;
     height: 90vh;
@@ -517,5 +523,23 @@ body{
 
   .title-confirmation {
     line-height: 1.5em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .add-to-cart {
+    top: 73%;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .add-to-cart {
+    top: 72%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .add-to-cart {
+    top: 70%;
   }
 }
