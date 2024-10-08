@@ -256,7 +256,7 @@ function showPopup() {
 
 function hidePopup() {
 
-  if(confirm('Are you sure ypu want to confirm the order?')){
+  if(confirm('Are you sure you want to confirm the order?')){
     const popup = document.querySelector('.pop-up');
   popup.style.visibility = 'hidden';
   
